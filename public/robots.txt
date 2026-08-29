@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yaseen-almhishi.github.io/sitemap.xml

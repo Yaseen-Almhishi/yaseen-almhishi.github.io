@@ -1,0 +1,16 @@
+{
+  "name": "Yaseen Almahayshi — Portfolio",
+  "short_name": "Yaseen Almahayshi",
+  "description": "Backend-focused software engineering portfolio.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f7f8fa",
+  "theme_color": "#f7f8fa",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

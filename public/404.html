@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Finding the page — Yaseen Almahayshi</title>
+    <style>
+      :root { color-scheme: light; background: #f7f8fa; color: #20232a; font-family: Arial, Helvetica, sans-serif; }
+      body { min-height: 100vh; margin: 0; display: grid; place-items: center; }
+      main { width: min(760px, calc(100% - 48px)); }
+      small { color: #a82d28; font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+      h1 { margin: 18px 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(42px, 8vw, 82px); font-weight: 500; letter-spacing: -.04em; line-height: .95; }
+      h1 span { color: #a82d28; }
+      p { max-width: 540px; color: #717681; line-height: 1.6; }
+    </style>
+    <script>
+      sessionStorage.setItem("portfolio:redirect", location.pathname + location.search + location.hash);
+      location.replace(location.origin + "/");
+    </script>
+  </head>
+  <body>
+    <main><small>404</small><h1>Finding the page<span>.</span></h1><p>Returning to the portfolio and restoring the address you requested.</p></main>
+  </body>
+</html>

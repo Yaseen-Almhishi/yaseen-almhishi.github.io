@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Yaseen Almahayshi — Backend-focused Software Engineer</title>
+  <desc id="description">An editorial typographic card in cool paper, dark ink, and a restrained red accent.</desc>
+  <rect width="1200" height="630" fill="#f7f8fa"/>
+  <rect x="42" y="42" width="1116" height="546" fill="none" stroke="#dfe2e7" stroke-width="2"/>
+  <line x1="115" y1="470" x2="1085" y2="470" stroke="#c5c9d1" stroke-width="2"/>
+  <text x="115" y="135" fill="#717681" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="5">BACKEND-FOCUSED SOFTWARE ENGINEER</text>
+  <text x="110" y="295" fill="#20232a" font-family="Georgia, 'Times New Roman', serif" font-size="102" font-weight="600" letter-spacing="-4">Yaseen Almahayshi</text>
+  <circle cx="1066" cy="278" r="9" fill="#a82d28"/>
+  <text x="115" y="385" fill="#363a43" font-family="Arial, Helvetica, sans-serif" font-size="31">APIs · integrations · data workflows · modular systems</text>
+  <text x="115" y="525" fill="#717681" font-family="Arial, Helvetica, sans-serif" font-size="22">Misurata, Libya</text>
+  <text x="1085" y="525" text-anchor="end" fill="#a82d28" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">yaseen-almhishi.github.io</text>
+</svg>
