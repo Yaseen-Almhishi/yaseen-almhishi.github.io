@@ -37,6 +37,7 @@ function CvHeader({ kind }: { kind: CvKind }) {
       <address>
         <span>{profile.location}</span>
         <a href={`mailto:${profile.email}`}>{profile.email}</a>
+        <a href={profile.siteUrl}>{profile.siteUrl.replace(/^https?:\/\//, "")}</a>
         <a href={profile.github}>github.com/{profile.githubLabel}</a>
         <a href={profile.linkedin}>linkedin.com/{profile.linkedinLabel}</a>
       </address>
@@ -65,35 +66,49 @@ function CvCommunity() {
 
 function ProfessionalCv() {
   const marsol = projects.find((project) => project.slug === "marsol")!;
-  const bachelorProject = projects.find((project) => project.slug === "biometric-voting-poc")!;
+  const lumi = projects.find((project) => project.slug === "salon-platform")!;
+  const riad = projects.find((project) => project.slug === "fulfillment-platform")!;
+  const roastMeAgent = projects.find((project) => project.slug === "roast-me-agent")!;
+  const hemolyTools = projects.find((project) => project.slug === "hemoly-tools")!;
   return (
     <>
       <CvHeader kind="professional" />
-      <CvSection title="Profile"><p>{profile.introduction} {profile.supporting}</p></CvSection>
+      <CvSection title="Profile">
+        <p>Backend-focused software engineer building APIs, integrations, data workflows, and modular business systems across .NET and TypeScript stacks.</p>
+      </CvSection>
       <CvSection title="Experience">
         <CvEntry title={`${experience[0].role} — ${experience[0].organization}`} meta={experience[0].dates}>
-          <CvBullets items={experience[0].points} />
+          <CvBullets items={[
+            "Build and maintain backend services, APIs, integrations, and business workflows across .NET and TypeScript systems.",
+            "Contribute across Marsol, Riad, Lumi, and event systems; additional work includes Marsol Wallet, iLab, and RoastingMachine.",
+            "Work across data modelling, modular design, background processing, debugging, documentation, and frontend delivery when needed.",
+          ]} />
         </CvEntry>
       </CvSection>
       <CvSection title="Selected work">
-        <CvEntry title={marsol.title} sub="Communications platform · public documentation">
-          <CvBullets items={[marsol.contributions[0], marsol.contributions[2]]} />
+        <CvEntry title={marsol.title} sub="NestJS · TypeScript · PostgreSQL · Redis · Prisma · BullMQ">
+          <CvBullets items={["Contribute to backend services, APIs, data workflows, localization, maintenance, and public-facing API documentation."]} />
         </CvEntry>
-        <CvEntry title="Private business platforms" sub="Salon management; fulfillment & commerce; wallet & code redemption">
+        <CvEntry title={lumi.title} sub="ASP.NET Core · Blazor · Entity Framework Core · PostgreSQL">
+          <CvBullets items={["Started the web platform and built its early backend, data, booking, scheduling, administration, localization, and reporting foundation."]} />
+        </CvEntry>
+        <CvEntry title={riad.title} sub="ASP.NET Core · Blazor · PostgreSQL · Redis · Hangfire · SignalR">
+          <CvBullets items={["Contribute across catalog, inventory, vendors, checkout, payments, orders, shipping, search, notifications, and administration."]} />
+        </CvEntry>
+        <CvEntry title={`${roastMeAgent.title} & ${hemolyTools.title}`} sub="FastAPI · AI services · ASP.NET Core · Blazor · WhatsApp integrations">
           <CvBullets items={[
-            "Contributed to backend services, data modelling, integrations, and administrative workflows at Cipher.",
-            "Product identities and private implementation details are intentionally omitted.",
+            "Main contributor to RoastMeAgent, a WhatsApp-connected AI experience for a local TEDx event.",
+            "Contributed sticker-generation, library, and WhatsApp delivery workflows to HemolyTools for a medical event in Tripoli.",
           ]} />
-        </CvEntry>
-        <CvEntry title={bachelorProject.title} sub="Bachelor project · academic prototype">
-          <p>{bachelorProject.summary}</p>
         </CvEntry>
       </CvSection>
       <CvSkills />
       <CvSection title="Education">
         {education.map((item) => <CvEntry key={item.program} title={`${item.program} — ${item.institution}`} meta={item.dates} sub={item.location} />)}
       </CvSection>
-      <CvCommunity />
+      <CvSection title="Languages">
+        <p>{languages.map((item) => `${item.name} (${item.level})`).join(" · ")}</p>
+      </CvSection>
     </>
   );
 }

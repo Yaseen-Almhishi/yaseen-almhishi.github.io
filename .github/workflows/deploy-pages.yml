@@ -35,7 +35,7 @@ jobs:
       - name: Build the site
         run: pnpm build
         env:
-          VITE_SITE_URL: https://yaseen-almhishi.github.io
+          VITE_SITE_URL: https://almahayshi.dev
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

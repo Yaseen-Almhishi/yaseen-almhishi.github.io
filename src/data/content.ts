@@ -2,7 +2,7 @@ export type Project = {
   slug: string;
   index: string;
   title: string;
-  label: "Publicly documented" | "Private work" | "Bachelor project";
+  label: "Company work" | "Event project" | "Internship project" | "Bachelor project";
   summary: string;
   context: string;
   role: string;
@@ -31,12 +31,12 @@ export const profile = {
   name: "Yaseen Almahayshi",
   role: "Backend-focused Software Engineer",
   location: "Misurata, Libya",
-  email: "yaseen.almahayshi@gmail.com",
+  email: "yaseen@almahayshi.dev",
   github: "https://github.com/Yaseen-Almhishi",
   githubLabel: "Yaseen-Almhishi",
   linkedin: "https://www.linkedin.com/in/yaseen-almahayshi/",
   linkedinLabel: "in/yaseen-almahayshi",
-  siteUrl: import.meta.env.VITE_SITE_URL || "https://yaseen-almhishi.github.io",
+  siteUrl: import.meta.env.VITE_SITE_URL || "https://almahayshi.dev",
   introduction:
     "I build APIs, integrations, data workflows, and modular business systems. My strongest work is on the backend, and I work across the stack when a problem needs it.",
   supporting:
@@ -44,86 +44,140 @@ export const profile = {
 };
 
 export const disclosureNote =
-  "Private projects are described only by category, role, general constraints, and approved engineering contributions.";
+  "Company work is presented with permission at the project, contribution, and high-level technology level. Code, private repositories, customer data, credentials, and internal implementation details remain private.";
 
 export const projects: Project[] = [
   {
     slug: "marsol",
     index: "01",
     title: "Marsol",
-    label: "Publicly documented",
+    label: "Company work",
     summary:
       "A communications platform whose public documentation covers REST APIs for SMS, OTP, sender IDs, virtual numbers, phonebooks, text-to-speech, and related services.",
     context:
-      "Marsol is a communications platform developed at Cipher. It is described here only at the product-and-service level of its public API documentation.",
-    role: "Software engineering and documentation contributions as part of the Cipher team.",
+      "Marsol is a communications platform developed at Cipher for messaging, verification, voice services, and virtual numbers.",
+    role: "Backend, API, data, localization, maintenance, and documentation contributions as part of the Cipher team.",
     contributions: [
-      "Contributed as a software engineer on the Cipher team.",
-      "Worked primarily on backend-related tasks.",
+      "Contributed to backend services, APIs, data workflows, and localization as part of the Cipher engineering team.",
+      "Supported maintenance and delivery across a mature communications product.",
       "Helped prepare and maintain public-facing API documentation.",
     ],
-    areas: ["Software engineering", "Backend development", "API documentation", "Team delivery"],
+    areas: ["NestJS", "TypeScript", "Prisma", "PostgreSQL", "Redis", "BullMQ", "OpenAPI", "Docker"],
     boundary:
-      "The public documentation is the limit of the product description here. Architecture, source code, operating data, customers, credentials, metrics, and other non-public implementation details are intentionally omitted.",
+      "Source code, private repositories, architecture details, operating data, customers, credentials, metrics, and other non-public implementation details are intentionally omitted.",
     publicLink: { label: "Read the public API documentation", href: "https://docs.marsol.ly/" },
   },
   {
     slug: "salon-platform",
     index: "02",
-    title: "Salon-management platform",
-    label: "Private work",
+    title: "Lumi",
+    label: "Company work",
     summary:
-      "Backend, data, administration, and operational work for a private salon-management platform at Cipher.",
+      "A web-based salon-management platform for bookings, services, employees, administration, localization, and reporting, now deployed and in use.",
     context:
-      "A private company project in the salon-management category. The public description deliberately stops at the category and contribution level.",
-    role: "Software engineering contribution within Cipher.",
+      "I started the Lumi project at Cipher and established its early technical and product foundation.",
+    role: "Project initiation and early full-stack engineering contribution within Cipher.",
     contributions: [
-      "Contributed to server-side features, data modelling, and administrative workflows.",
-      "Supported debugging, maintenance, and integration work as the system evolved.",
+      "Created the initial project foundation and contributed to its backend and data layers.",
+      "Built early booking, scheduling, service, employee-management, administration, localization, reporting, and deployment workflows.",
     ],
-    areas: ["Backend services", "Data modelling", "Administrative workflows", "Maintenance"],
+    areas: [".NET", "ASP.NET Core", "Blazor", "Entity Framework Core", "PostgreSQL", "Radzen", "Serilog", "Docker"],
     boundary:
-      "The product name, screenshots, code, client information, schemas, architecture, and private workflows are not disclosed.",
+      "The project is discussed with company permission. Source code, private repository links, customer data, credentials, and internal implementation details are not disclosed.",
   },
   {
     slug: "fulfillment-platform",
     index: "03",
-    title: "Fulfillment & commerce platform",
-    label: "Private work",
+    title: "Riad",
+    label: "Company work",
     summary:
-      "Backend and modular business-system work for a private fulfillment and commerce platform at Cipher.",
+      "A new commerce and fulfillment system covering catalog, inventory, vendors, checkout, payments, orders, shipping, and operational administration.",
     context:
-      "A private company project in the fulfillment and commerce category. This description avoids product identity and implementation details.",
-    role: "Software engineering contribution with a backend and modular-systems focus.",
+      "Cipher is building Riad as a new commerce and fulfillment system and is preparing it for customer delivery.",
+    role: "Full-stack software engineering contribution with a backend and modular-systems focus.",
     contributions: [
-      "Contributed to backend components and administrative workflows.",
-      "Worked across integration, data-modelling, and system-design concerns as part of the team.",
+      "Contributed across catalog, inventory, vendors, shopping cart, checkout, payments, orders, shipping, notifications, and administrative workflows.",
+      "Worked on APIs, background processing, integrations, data modelling, search, and real-time application concerns as part of the team.",
     ],
-    areas: ["Backend systems", "Integrations", "Data modelling", "System design"],
+    areas: [".NET", "ASP.NET Core", "Blazor", "Entity Framework Core", "PostgreSQL", "Redis", "Hangfire", "SignalR", "Typesense", "Docker"],
     boundary:
-      "The product identity, customers, metrics, screenshots, code, internal diagrams, and private workflows are not disclosed.",
+      "The high-level product scope and stack are shared with company permission. Source code, private repository links, customer data, credentials, architecture details, and internal workflows remain private.",
   },
   {
     slug: "wallet-code-platform",
     index: "04",
-    title: "Wallet & code-redemption platform",
-    label: "Private work",
+    title: "Marsol Wallet",
+    label: "Company work",
     summary:
-      "Backend work for a private wallet and redeemable-code platform at Cipher.",
+      "A wallet and redeemable-code platform supporting code lifecycle, top-up usage, reporting, administration, and related operational workflows.",
     context:
-      "A private company project in the wallet and code-redemption category. The description remains at category and contribution level because the repository and product details are not public.",
+      "I contributed to Marsol Wallet as part of the Cipher team, focusing on selected product and operational features.",
     role: "Software engineering contribution within Cipher.",
     contributions: [
-      "Contributed to backend services, APIs, and related business workflows.",
-      "Supported data modelling, validation, testing, debugging, and maintenance.",
+      "Contributed to code validity, top-up usage statistics, configuration, exports, filtering, mail, deployment, and interface fixes.",
+      "Supported backend services, data workflows, debugging, and maintenance as part of the wider team effort.",
     ],
-    areas: ["Backend services", "REST APIs", "Data modelling", "Testing"],
+    areas: [".NET", "ASP.NET Core", "Entity Framework Core", "PostgreSQL", "OpenAPI", "FIDO2", "Docker"],
     boundary:
-      "Product names, screenshots, code, schemas, customers, metrics, and non-public implementation details are intentionally omitted.",
+      "The project and high-level stack are shared with company permission. Source code, private repository links, customer data, credentials, and internal implementation details are not disclosed.",
+  },
+  {
+    slug: "roast-me-agent",
+    index: "05",
+    title: "RoastMeAgent",
+    label: "Event project",
+    summary:
+      "An AI experience created for a local TEDx event and connected to a WhatsApp chatbot so attendees could generate playful, personalized roasts.",
+    context:
+      "The project turned an event interaction into a conversational experience combining image understanding, generated humor, audio, and WhatsApp delivery.",
+    role: "Main software engineering contribution within the Cipher team.",
+    contributions: [
+      "Led most of the implementation work across the service, AI workflow, media generation, storage, and event delivery path.",
+      "Integrated the experience with a WhatsApp chatbot so attendees could use it directly during the event.",
+    ],
+    areas: ["Python", "FastAPI", "Google ADK", "LiteLLM", "ElevenLabs", "Firebase", "Google Cloud Storage", "Docker"],
+    boundary:
+      "The event concept and high-level stack are shared with company permission. Prompts, private code, credentials, participant data, and internal implementation details remain private.",
+  },
+  {
+    slug: "hemoly-tools",
+    index: "06",
+    title: "HemolyTools",
+    label: "Event project",
+    summary:
+      "A set of digital tools created for a medical event in Tripoli, including a sticker-generation experience and WhatsApp-assisted delivery.",
+    context:
+      "I contributed to the event's creative tooling, particularly the sticker-generation and WhatsApp integration workflow.",
+    role: "Focused software engineering contribution within the Cipher team.",
+    contributions: [
+      "Worked on reference-driven and batch sticker generation, the sticker library, and supporting interface flows.",
+      "Contributed to the WhatsApp gateway path used to deliver generated event content.",
+    ],
+    areas: [".NET", "ASP.NET Core", "Blazor", "Entity Framework Core", "SQL Server", "React", "TypeScript", "WhatsApp Cloud API", "Docker"],
+    boundary:
+      "The event purpose, contribution, and high-level stack are shared with company permission. Medical or participant data, private code, credentials, prompts, and internal implementation details remain private.",
+  },
+  {
+    slug: "roasting-machine",
+    index: "07",
+    title: "RoastingMachine",
+    label: "Internship project",
+    summary:
+      "A playful image-to-roast prototype I worked on during my internship; its core idea later inspired RoastMeAgent.",
+    context:
+      "The project was an early exercise in connecting image analysis, generated text, speech, media storage, and a documented backend API.",
+    role: "Substantial internship implementation contribution within Cipher.",
+    contributions: [
+      "Worked on image handling, generated captions and roasts, text-to-speech, object storage, API protection, logging, and documentation.",
+      "Helped establish the technical idea that was later adapted into the event-focused RoastMeAgent experience.",
+    ],
+    areas: ["NestJS", "TypeScript", "AI image captioning", "Text-to-speech", "Object storage", "OpenAPI", "Docker"],
+    boundary:
+      "This is presented as an internship prototype, not a production product. Private code, credentials, prompts, stored media, and implementation details remain private.",
   },
   {
     slug: "biometric-voting-poc",
-    index: "05",
+    index: "08",
     title: "Biometric voting — proof of concept",
     label: "Bachelor project",
     summary:
@@ -148,8 +202,9 @@ export const experience: Experience[] = [
     dates: "Sep 2023 — Present",
     points: [
       "Build and maintain backend services, APIs, integrations, and business workflows.",
-      "Contribute to data modelling, modular system design, debugging, and technical documentation.",
-      "Work across the stack when a product or operational problem requires it.",
+      "Contribute across Marsol, Riad, Lumi, Marsol Wallet, and focused event systems while keeping private implementation details confidential.",
+      "Made smaller contributions to iLab patient, request, permission, sample-handling, and settings workflows.",
+      "Work across data modelling, modular system design, background processing, debugging, technical documentation, and frontend delivery when needed.",
     ],
   },
 ];
