@@ -28,26 +28,28 @@ function ScrollManager() {
 function PageMetadata() {
   const { pathname } = useLocation();
   useEffect(() => {
+    const normalizedPathname = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
     let title = `${profile.name} — ${profile.role}`;
     let description = "Yaseen Almahayshi is a backend-focused software engineer working across APIs, integrations, data workflows, and modular business systems.";
     let shouldIndex = true;
-    if (pathname === "/cv/professional") title = `${profile.name} — Professional CV`;
-    if (pathname === "/cv/academic") title = `${profile.name} — Academic CV`;
-    if (pathname.startsWith("/work/")) {
-      const project = projects.find((item) => `/work/${item.slug}` === pathname);
+    if (normalizedPathname === "/cv/professional") title = `${profile.name} — Professional CV`;
+    if (normalizedPathname === "/cv/academic") title = `${profile.name} — Academic CV`;
+    if (normalizedPathname.startsWith("/work/")) {
+      const project = projects.find((item) => `/work/${item.slug}` === normalizedPathname);
       if (project) {
         title = `${project.title} — ${profile.name}`;
         description = project.summary;
       }
     }
     const knownPaths = new Set(["/", "/cv/professional", "/cv/academic", ...projects.map((project) => `/work/${project.slug}`)]);
-    if (!knownPaths.has(pathname)) {
+    if (!knownPaths.has(normalizedPathname)) {
       title = `Page not found — ${profile.name}`;
       description = "The requested portfolio page could not be found.";
       shouldIndex = false;
     }
     document.title = title;
-    const canonicalUrl = new URL(pathname === "/" ? "/" : pathname, profile.siteUrl).toString();
+    const canonicalPathname = normalizedPathname === "/" ? "/" : `${normalizedPathname}/`;
+    const canonicalUrl = new URL(canonicalPathname, profile.siteUrl).toString();
     const setMeta = (selector: string, content: string) => document.querySelector<HTMLMetaElement>(selector)?.setAttribute("content", content);
     setMeta('meta[name="description"]', description);
     setMeta('meta[property="og:title"]', title);
