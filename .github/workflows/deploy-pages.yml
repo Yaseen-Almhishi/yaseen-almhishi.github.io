@@ -37,6 +37,26 @@ jobs:
         env:
           VITE_SITE_URL: https://almahayshi.dev
 
+      - name: Generate direct-route entry points
+        shell: bash
+        run: |
+          routes=(
+            "work/marsol"
+            "work/salon-platform"
+            "work/fulfillment-platform"
+            "work/wallet-code-platform"
+            "work/roast-me-agent"
+            "work/hemoly-tools"
+            "work/roasting-machine"
+            "work/biometric-voting-poc"
+            "cv/professional"
+            "cv/academic"
+          )
+          for route in "${routes[@]}"; do
+            mkdir -p "dist/${route}"
+            cp dist/index.html "dist/${route}/index.html"
+          done
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
